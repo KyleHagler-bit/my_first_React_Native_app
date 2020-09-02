@@ -1,14 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import React, {useState} from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React, { useState } from "react";
+import { StyleSheet, Text, View, Button, TextInput } from "react-native";
 
 export default function App() {
-  const [outputText, setOutputText] = useState('Open up App.js to start working on your app!');
+  const [outputText, setOutputText] = useState(
+    "Open up App.js to start working on your app!"
+  );
   return (
     <View style={styles.container}>
-      <Text>{outputText}</Text>
-      <Button title="Change Text" onPress={() => setOutputText('The text has changed')}/>
-      
+      <View style={{padding: 50}}>
+        <TextInput placeholder="Course Goal" style={{borderBottomColor: 'black', borderBottomWidth: 1 }} />
+        <Button title="ADD" />
+      </View>
+      <View></View>
     </View>
   );
 }
@@ -16,8 +20,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
