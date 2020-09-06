@@ -7,7 +7,8 @@ const GoalInput = props =>{
   function goalInputHandler(enteredText) {
     //const goalInputHandler = (enteredText) =>
     setEnteredGoal(enteredText);
-  }
+  };
+  
 return (
   <View style={styles.inputContainer}>
         <TextInput
@@ -16,8 +17,8 @@ return (
           onChangeText={goalInputHandler} //dont add () here
           value={enteredGoal}
         />
-        <Button title="ADD" onPress={() => props.onAddGoal(enteredGoal)} /> {/*Could also use .bind */}
-        {/*onPress = {props.onAddGoal.bind(this, enteredGoal)} */}
+        <Button title="ADD" onPress={() => props.onAddGoal(enteredGoal)} /> 
+       
       </View>
 )
 }

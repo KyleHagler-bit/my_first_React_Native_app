@@ -12,17 +12,14 @@ import {
 //Use ScrollView when you know info will exceed page but not by much
 //Flatlist is better for "infinite" or unknown length of info
 
-import GoalItem from './components/GoalItem';
-import GoalInput from './components/GoalInput';
+import GoalItem from "./components/GoalItem";
+import GoalInput from "./components/GoalInput";
 
 export default function App() {
-  
   const [courseGoals, setCourseGoals] = useState([]);
 
- 
-
-  const addGoalHandler = goalTitle => {
-    console.log(enteredGoal);
+  const addGoalHandler = (goalTitle) => {
+    //console.log(goalTitle);
     //setCourseGoals([...courseGoals, enteredGoal]);
     setCourseGoals((currentGoals) => [
       ...currentGoals,
@@ -32,13 +29,13 @@ export default function App() {
 
   return (
     <View style={styles.screen}>
-      <GoalInput onAddGoal={addGoalHandler}/>
+      <GoalInput onAddGoal={addGoalHandler} />
       {/*Need to use special view to allow moobile screen to scroll */}
-      <FlatList keyExtractor={(item, index) => item.id} data={courseGoals}>
-        renderItem=
-        {(itemData) => <GoalItem title={itemData.item.value}></GoalItem>}
-        {/*Wrap in view for more styling options */}
-      </FlatList>
+      <FlatList
+        keyExtractor={(item, index) => item.id}
+        data={courseGoals}
+        renderItem={itemData => <GoalItem title={itemData.item.value} />}
+      />
     </View>
   );
 }
@@ -47,6 +44,4 @@ const styles = StyleSheet.create({
   screen: {
     padding: 50,
   },
-  
-  
 });

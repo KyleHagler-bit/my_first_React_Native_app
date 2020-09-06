@@ -1,10 +1,12 @@
-import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
 
-const GoalItem = props => {
-  return  <View style={styles.listItem}>
-  <Text>{props.title}</Text>
-</View>
+const GoalItem = (props) => {
+  return (
+    <View style={styles.listItem}>
+      <Text>{props.title}</Text>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
