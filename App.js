@@ -35,10 +35,14 @@ export default function App() {
     });
   }
 
+  const cancelGoalAdditionHandler = () => {
+setIsAddMode(false);
+  };
+
   return (
     <View style={styles.screen}>
       <Button title="Add New Goal" onPress={() => setIsAddMode(true)}/>
-      <GoalInput visible ={isAddMode} onAddGoal={addGoalHandler} />
+      <GoalInput visible ={isAddMode} onAddGoal={addGoalHandler} onCancel={cancelGoalAdditionHandler} />
       {/*Need to use special view to allow moobile screen to scroll */}
       <FlatList
         keyExtractor={(item, index) => item.id}
